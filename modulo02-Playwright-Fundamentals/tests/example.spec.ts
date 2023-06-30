@@ -42,6 +42,23 @@ test("Assertions", async ({ page }) => {
     await expect(notExistingElement).not.toBeVisible()
 })
 
+test.describe("My first test suite", () => {
+    test("Click on checkbox", async ({page}) => {
+        await page.goto("http://zero.webappsecurity.com/index.html")
+    await page.click("#signin_button")
+
+    await page.type("input[type='text']", "wrongUser")
+    await page.type("#user_password", "wrongPassword")
+
+    await page.getByLabel("Keep me signed in").check()
+
+    await page.click("text=Sign in")
+
+    const errorMessage = await page.locator(".alert-error")
+    await expect(errorMessage).toContainText("Login and/or password are wrong.")
+    })
+})
+
 test.skip("Selectors", async ({ page }) => {
     // text
     await page.click("text=some text")
