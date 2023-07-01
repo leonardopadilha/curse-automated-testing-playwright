@@ -59,6 +59,17 @@ test.describe("My first test suite", () => {
     })
 })
 
+test('Screenshots', async({ page }) => {
+    await page.goto('https://example.com/')
+    await page.screenshot({ path:'screenshots/myScreenshot.png' });
+})
+
+test('Single element screenshot', async ({ page }) => {
+    await page.goto('https://example.com/')
+    const element = await page.locator('h1')
+    await element.screenshot({ path:'screenshots/single_element_screenshot.png' })
+})
+
 test.skip("Selectors", async ({ page }) => {
     // text
     await page.click("text=some text")
