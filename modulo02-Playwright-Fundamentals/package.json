@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "npx playwright test --headed",
+    "test:e2e": "playwright test --config=e2e.config.ts --project=Chromium --headed",
     "test:chrome": "npx playwright --config=playwright.config.ts --project=Chromium"
   },
   "author": "",
