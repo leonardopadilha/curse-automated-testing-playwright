@@ -20,6 +20,7 @@ test.describe('Login / Logout Flow', () => {
         //await page.click(".form-actions > input")
 
         await loginPage.login('wrongUser', 'wrongPassord')
+        await loginPage.wait(3000)
         await loginPage.assertErrorMessage("Login and/or password are wrong.")
     })
 
