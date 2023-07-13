@@ -6,7 +6,8 @@
   "scripts": {
     "test": "npx playwright test --headed",
     "test:e2e": "playwright test --config=e2e.config.ts --project=Chromium --headed",
-    "test:chrome": "npx playwright --config=playwright.config.ts --project=Chromium"
+    "test:chrome": "playwright --config=playwright.config.ts --project=Chromium",
+    "test:visual:chrome": "playwright test --config=visual.config.ts --project=Chromium"
   },
   "author": "",
   "license": "ISC",
