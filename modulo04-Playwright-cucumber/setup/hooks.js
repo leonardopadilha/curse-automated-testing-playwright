@@ -14,7 +14,7 @@ AfterAll(async () => {
 Before(async () => {
     console.log("Create new context and page")
     global.context = await global.browser.newContext()
-    global.page = await global.context.newContext()
+    global.page = await global.context.newPage()
 })
 
 After(async () => {
