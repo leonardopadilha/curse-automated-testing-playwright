@@ -14,4 +14,3 @@ test.describe("Visual Regression Testing Example", () => {
 })
 
 //npx playwright test --config=visual.config.ts
-//npx playwright test --config=visual.config.ts --project=chromium
