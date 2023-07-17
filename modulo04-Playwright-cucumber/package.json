@@ -1,0 +1,19 @@
+{
+  "name": "modulo04-playwright-cucumber",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "./node_modules/.bin/cucumber-js --require cucumber.js --require step-definitions/*/.js -f json:cucumber_report.json --publish-quiet"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@cucumber/cucumber": "^9.3.0",
+    "chai": "^4.3.7",
+    "cucumber-html-reporter": "^7.1.1",
+    "playwright": "^1.36.1",
+    "prettier": "^3.0.0"
+  }
+}
