@@ -1,5 +1,6 @@
 const playwright = require('playwright')
 const random_useragent = require('random-useragent')
+const fs = require('fs')
 
 const BASE_URL="https://github.com/topics/playwright"
 
@@ -33,6 +34,9 @@ const BASE_URL="https://github.com/topics/playwright"
     console.log(repositories)
 
     // Store Data into File
+    const logger = fs.createWriteStream('data.json', { flag: 'w' })
+    //logger.write(JSON.stringify(repositories)) //sem formatação
+    logger.write(JSON.stringify(repositories, null, ' ')) // Json formatado
 
     // Close browser
     await browser.close()
@@ -43,3 +47,4 @@ const BASE_URL="https://github.com/topics/playwright"
 })
 
 // npm install random-useragent
+// npm install playwright prettier
